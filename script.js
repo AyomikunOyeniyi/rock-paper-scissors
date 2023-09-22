@@ -7,11 +7,11 @@
 
 let num = Math.random();
 
-let computerChoice = num.toFixed(1);
+let computerChoice = num.toFixed(2);
 
-if (computerChoice <= 0.3) {
+if (computerChoice <= 0.33) {
     computerChoice = 'Rock';
-} else if (computerChoice > 0.3 && computerChoice <= 0.6) {
+} else if (computerChoice > 0.33 && computerChoice <= 0.67) {
     computerChoice = 'Paper';
 } else {
     computerChoice = 'Scissors'
@@ -21,7 +21,7 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-
+console.log(getComputerChoice());
 
 let playerChoice = prompt('Insert choice here')
 
