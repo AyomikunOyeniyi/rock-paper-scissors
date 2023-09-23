@@ -24,41 +24,39 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+const playerSelection = 'rock';
+let computerSelection = getComputerChoice().toLowerCase();
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        return 'It\'s a tie!';
     }
 
-    if ( playerSelection == 'rock' && computerSelection == 'paper') {
-        ++computerScore;
-        return "You lose!Paper wins";
-    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        ++playerScore;
-        return "You win! Scissors loses";
+    if ( playerSelection === 'rock' && computerSelection === 'paper') {
+        computerScore += 1;
+        return 'You lose!Paper wins';
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        playerScore += 1;
+        return 'You win! Scissors loses';
     } 
 
-    if (playerSelection == 'paper' && computerSelection == 'rock') {
-        ++playerScore;
-        return "You win!Rock loses";
-    } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        ++computerScore;
-        return "You lose!Scissors wins"
+    if (playerSelection === 'paper' && computerSelection === 'rock') {
+        playerScore += 1;
+        return 'You win!Rock loses';
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        computerScore += 1;
+        return 'You lose!Scissors wins';
     }
 
-    if (playerSelection == 'scissors' && computerSelection == 'rock') {
-        ++computerScore;
-        return "You lose! Rock wins";
-    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        ++playerScore;
-        return "You win! Paper loses";
+    if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        computerScore += 1;
+        return 'You lose! Rock wins';
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        playerScore += 1;
+        return 'You win! Paper loses';
     }
 
 }
-
-const playerSelection = 'rock';
-
-const computerSelection = getComputerChoice().toLowerCase();
-
 
 
 function game() {
@@ -77,10 +75,9 @@ function game() {
     playRound(playerSelection, computerSelection);
     console.log(playRound(playerSelection, computerSelection));
 
-    playRound(playerSelection, computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
 }
 
+game();
 
 console.log(playerScore, computerScore);
 
