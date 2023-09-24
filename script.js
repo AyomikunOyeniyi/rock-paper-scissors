@@ -8,24 +8,41 @@
 let playerScore = 0;
 let computerScore = 0;
 
-let num = Math.random();
 
-let computerChoice = num.toFixed(2);
-
-if (computerChoice <= 0.33) {
-    computerChoice = 'Rock';
-} else if (computerChoice > 0.33 && computerChoice <= 0.67) {
-    computerChoice = 'Paper';
-} else {
-    computerChoice = 'Scissors'
-}
 
 function getComputerChoice() {
+    let num = Math.random();
+    
+    let computerChoice = num.toFixed(2);
+    
+    if (computerChoice <= 0.33) {
+    computerChoice = 'Rock';
+    } else if (computerChoice > 0.33 && computerChoice <= 0.67) {
+    computerChoice = 'Paper';
+    } else {
+    computerChoice = 'Scissors'
+    }
     return computerChoice;
 }
 
-const playerSelection = 'rock';
-let computerSelection = getComputerChoice().toLowerCase();
+let playerSelection = 'rock';
+function game() {
+    let playerSelection = prompt( 'input choice here');
+    let computerSelection = getComputerChoice().toLowerCase();
+     playRound(playerSelection, computerSelection);
+
+     playRound(playerSelection, computerSelection);
+
+     playRound(playerSelection, computerSelection);
+
+     playRound(playerSelection, computerSelection);
+
+     playRound(playerSelection, computerSelection);
+
+   }
+
+
+
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -57,29 +74,11 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
-
-
-function game() {
-    playRound(playerSelection, computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-
-    playRound(playerSelection, computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-
-    playRound(playerSelection, computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-
-    playRound(playerSelection, computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-
-    playRound(playerSelection, computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-
-}
-
-game();
+   console.log(playRound(playerSelection, computerSelection))
+   game();
 
 console.log(playerScore, computerScore);
+
 
 
 
