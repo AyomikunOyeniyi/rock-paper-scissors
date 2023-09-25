@@ -16,35 +16,24 @@ function getComputerChoice() {
     let computerChoice = num.toFixed(2);
     
     if (computerChoice <= 0.33) {
-    computerChoice = 'Rock';
+    computerChoice = 'rock';
     } else if (computerChoice > 0.33 && computerChoice <= 0.67) {
-    computerChoice = 'Paper';
+    computerChoice = 'paper';
     } else {
-    computerChoice = 'Scissors'
+    computerChoice = 'scissors'
     }
     return computerChoice;
 }
 
-let playerSelection = 'rock';
-function game() {
-    let playerSelection = prompt( 'input choice here');
-    let computerSelection = getComputerChoice().toLowerCase();
-     playRound(playerSelection, computerSelection);
+let playerSelection = prompt( 'input choice here');
 
-     playRound(playerSelection, computerSelection);
-
-     playRound(playerSelection, computerSelection);
-
-     playRound(playerSelection, computerSelection);
-
-     playRound(playerSelection, computerSelection);
-
-   }
 
 
 
 
 function playRound(playerSelection, computerSelection) {
+    let computerSelection = getComputerChoice();
+
     if (playerSelection === computerSelection) {
         return 'It\'s a tie!';
     }
@@ -74,8 +63,24 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
-   console.log(playRound(playerSelection, computerSelection))
-   game();
+
+function game() {
+    
+    
+    playRound(playerSelection, computerSelection);
+
+    playRound(playerSelection, computerSelection);
+
+    playRound(playerSelection, computerSelection);
+
+    playRound(playerSelection, computerSelection);
+
+    playRound(playerSelection, computerSelection);
+
+}
+   
+console.log(game());
+game();
 
 console.log(playerScore, computerScore);
 
