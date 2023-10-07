@@ -1,1 +1,1 @@
-Classic rock paper scissors game with JS.
+Ultra minimalistic rock paper scissors game with JS ;).
