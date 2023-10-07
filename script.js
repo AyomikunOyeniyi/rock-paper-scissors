@@ -9,6 +9,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 
+const resultContainer = document.createElement('div');
 
 function getComputerChoice() {
     let num = Math.random();
@@ -33,6 +34,22 @@ function getComputerChoice() {
     }
 
     let computerSelection = getComputerChoice();
+
+    const buttonContainer = document.querySelector('div');
+    console.log(buttonContainer);
+    
+    const rock = document.createElement('button');
+    const paper = document.createElement('button');
+    const scissors = document.createElement('button');
+
+    buttonContainer.appendChild(rock);
+    buttonContainer.appendChild(paper);
+    buttonContainer.appendChild(scissors);
+
+    rock.addEventListener('click',playRound('rock'));
+    paper.addEventListener('click',playRound('paper'));
+    scissors.addEventListener('click',playRound('scissors'));
+
 
     function playRound(playerSelection, computerSelection) {
     
@@ -71,7 +88,7 @@ function getComputerChoice() {
 
 
 
-function game() {
+/*function game() {
     for (i = 0; i < 5; i++) {
         let playerSelection = playerChoice();
         let computerSelection = getComputerChoice();
@@ -85,7 +102,8 @@ function game() {
 
 game();
 
-console.log(playerScore, computerScore);
+console.log(playerScore, computerScore); */
+
 
 
 
